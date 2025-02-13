@@ -1,0 +1,10 @@
+#include <stdio.h>
+void appendLog(const char *logEntry) {
+    FILE *file = fopen("log.txt", "a");
+    if (file) {
+        fprintf(file, "%s\n", logEntry);
+        fclose(file);
+    } else {
+        printf("Error opening file!\n");
+    }
+}
